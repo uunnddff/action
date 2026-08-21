@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Новая шапка — точный интерактивный прототип</title>
+  <link rel="stylesheet" href="styles.css?v=14" />
+</head>
+<body>
+<main class="prototype">
+  <header class="prototype__intro">
+    <p class="prototype__eyebrow">Автономный HTML-прототип для передачи разработчикам</p>
+    <h1>В Релиз 20-го авг — новые элементы шапки</h1>
+    <p>Наведите курсор на элементы, попробуйте ввод и очистку поиска.</p>
+  </header>
+
+  <section class="theme-section">
+    <div class="theme-section__heading"><h2>Холодная тема · Нейра Николаевна</h2><span>Интерактивные компоненты · состояния соответствуют Figma</span></div>
+    <div class="release-screen-viewport" aria-label="Холодная тема">
+      <div class="release-screen">
+        <img src="cold-screen-frame@2x.png" alt="" class="release-screen__image" />
+        <div class="release-screen__cover" aria-hidden="true"></div>
+        <div class="release-screen__header">
+          <div class="search-field search-field--cold" data-state="default">
+            <span class="search-field__glow" aria-hidden="true"></span><span class="search-field__surface" aria-hidden="true"></span>
+            <input class="search-field__input" placeholder="Placeholder" aria-label="Поиск в холодной теме" />
+            <div class="search-field__actions">
+              <button class="search-field__clear" type="button" aria-label="Очистить поиск" tabindex="-1"><img src="cancel-cold@4x.png" alt="" /></button><span class="search-field__divider search-field__divider--after-clear" aria-hidden="true"></span>
+              <button class="search-field__requisites" type="button">По реквизитам</button><span class="search-field__divider" aria-hidden="true"></span>
+              <button class="search-field__submit" type="button" aria-label="Выполнить поиск"><img src="search-cold@4x.png" alt="" /></button>
+            </div>
+          </div>
+          <button class="ai-button ai-button--cold ai-button--neyra" type="button" data-state="default">
+            <span class="ai-button__shadow" aria-hidden="true"><span class="ai-button__shadow-layer ai-button__shadow-layer--default"></span><span class="ai-button__shadow-layer ai-button__shadow-layer--hover-flow"></span><span class="ai-button__shadow-layer ai-button__shadow-layer--pressed"></span><span class="ai-button__shadow-layer ai-button__shadow-layer--focused"></span></span>
+            <span class="ai-button__surface"><span class="ai-button__logos" aria-hidden="true"><img class="ai-button__logo ai-button__logo--default" src="ai-logo@4x.png" alt="" /><img class="ai-button__logo ai-button__logo--a" src="ai-logo-hover-a@4x.png" alt="" /><img class="ai-button__logo ai-button__logo--b" src="ai-logo-hover-b@4x.png" alt="" /></span><span class="ai-button__label">Спросить у Нейры Николаевны</span><img class="ai-button__portrait ai-button__portrait--neyra" src="neyra@4x.png" alt="" /></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="theme-section">
+    <div class="theme-section__heading"><h2>Тёплая тема · Лука-ИИ</h2><span>Интерактивные компоненты · состояния соответствуют Figma</span></div>
+    <div class="release-screen-viewport" aria-label="Тёплая тема">
+      <div class="release-screen">
+        <img src="warm-screen-frame@2x.png" alt="" class="release-screen__image" />
+        <div class="release-screen__cover" aria-hidden="true"></div>
+        <div class="release-screen__header">
+          <div class="search-field search-field--warm" data-state="default">
+            <span class="search-field__glow" aria-hidden="true"></span><span class="search-field__surface" aria-hidden="true"></span>
+            <input class="search-field__input" placeholder="Placeholder" aria-label="Поиск в тёплой теме" />
+            <div class="search-field__actions">
+              <button class="search-field__clear" type="button" aria-label="Очистить поиск" tabindex="-1"><img src="cancel-warm@4x.png" alt="" /></button><span class="search-field__divider search-field__divider--after-clear" aria-hidden="true"></span>
+              <button class="search-field__requisites" type="button">По реквизитам</button><span class="search-field__divider" aria-hidden="true"></span>
+              <button class="search-field__submit" type="button" aria-label="Выполнить поиск"><img src="search-warm@4x.png" alt="" /></button>
+            </div>
+          </div>
+          <button class="ai-button ai-button--warm ai-button--luka" type="button" data-state="default">
+            <span class="ai-button__shadow" aria-hidden="true"><span class="ai-button__shadow-layer ai-button__shadow-layer--default"></span><span class="ai-button__shadow-layer ai-button__shadow-layer--hover-flow"></span><span class="ai-button__shadow-layer ai-button__shadow-layer--pressed"></span><span class="ai-button__shadow-layer ai-button__shadow-layer--focused"></span></span>
+            <span class="ai-button__surface"><span class="ai-button__logos" aria-hidden="true"><img class="ai-button__logo ai-button__logo--default" src="ai-logo@4x.png" alt="" /><img class="ai-button__logo ai-button__logo--a" src="ai-logo-hover-a@4x.png" alt="" /><img class="ai-button__logo ai-button__logo--b" src="ai-logo-hover-b@4x.png" alt="" /></span><span class="ai-button__label"><span>Спросить у Луки-</span><span class="ai-button__label-small">ИИ</span></span><img class="ai-button__portrait ai-button__portrait--luka" src="luka@4x.png" alt="" /></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+(function () {
+  var DESIGN_WIDTH = 1495, DESIGN_HEIGHT = 582;
+  function fitScreens() {
+    document.querySelectorAll('.release-screen-viewport').forEach(function (viewport) {
+      var scale = Math.min(1, viewport.clientWidth / DESIGN_WIDTH);
+      viewport.style.height = (DESIGN_HEIGHT * scale) + 'px';
+      viewport.querySelector('.release-screen').style.transform = 'scale(' + scale + ')';
+    });
+  }
+  fitScreens();
+  window.addEventListener('resize', fitScreens);
+
+  document.querySelectorAll('.search-field').forEach(function (field) {
+    var input = field.querySelector('.search-field__input');
+    var clear = field.querySelector('.search-field__clear');
+    var hovered = false, focused = false, pressed = false;
+    function update() {
+      var hasValue = input.value.length > 0;
+      field.dataset.state = pressed
+        ? (hasValue ? 'pressed-filled' : 'pressed')
+        : focused
+          ? (hasValue ? 'typing' : 'focused')
+          : hasValue
+            ? (hovered ? 'filled-hover' : 'filled-inactive')
+            : hovered ? 'hover' : 'default';
+      clear.tabIndex = hasValue ? 0 : -1;
+    }
+    field.addEventListener('pointerenter', function () { hovered = true; update(); });
+    field.addEventListener('pointerleave', function () { hovered = false; pressed = false; update(); });
+    field.addEventListener('pointerdown', function () { pressed = true; update(); });
+    field.addEventListener('pointerup', function () { pressed = false; update(); });
+    input.addEventListener('focus', function () { focused = true; update(); });
+    input.addEventListener('blur', function () { focused = false; update(); });
+    input.addEventListener('input', update);
+    clear.addEventListener('click', function () { input.value = ''; input.focus(); update(); });
+    update();
+  });
+
+  document.querySelectorAll('.ai-button').forEach(function (button) {
+    var inside = false;
+    function setState(next) {
+      button.dataset.state = next;
+    }
+    button.addEventListener('pointerenter', function () { inside = true; setState('hover'); });
+    button.addEventListener('pointerleave', function () { inside = false; setState('default'); });
+    button.addEventListener('pointerdown', function () { setState('pressed'); });
+    button.addEventListener('pointerup', function () { setState('focused'); });
+    button.addEventListener('pointercancel', function () { setState(inside ? 'focused' : 'default'); });
+    button.addEventListener('focus', function () { if (!inside) setState('focused'); });
+    button.addEventListener('blur', function () { setState('default'); });
+    button.addEventListener('keydown', function (event) {
+      if ((event.key === 'Enter' || event.key === ' ') && !event.repeat) setState('pressed');
+    });
+    button.addEventListener('keyup', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') setState('focused');
+    });
+  });
+})();
+</script>
+</body>
+</html>
